@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Age calculator</title>
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />-->
+    <!--<link rel="stylesheet" href="app.css" />-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="phone-list.component.js"></script>
+    <script src="app.js"></script>
+      <script src="index.js"></script>
+    
+      
+  </head>
+  <body>
+      <div ng-app = "bod" ng-controller = "indexController">
+        {{name}} <br>
+        Enter DoB: <input type="date" data-date-inline-picker="true" ng-model="dob"><br>
+        check: <input type="text" ng-model="test"><br>
+        {{testing()}}<br>
+        Age: {{age()| year:'yyyy-MM-dd'}}
+      </div>
+  </body>
+</html>
