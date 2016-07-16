@@ -1,15 +1,16 @@
 bod.controller("indexController",function($scope){
-    
-    $scope.test='';
-    $scope.dob=null;
+    $scope.dob='';
     
     $scope.age=function(){
-        var year = $scope.dob;
-        return year;
-    };
-    
-    $scope.testing=function(){
-    
-        //return $scope.test.substring(2,5);
+        
+        var date = $scope.dob;
+        var today = new Date();
+        var bday = new Date(date);
+        var age = today.getFullYear() - bday.getFullYear();
+        var m = today.getMonth() - bday.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < bday.getDate())) {
+        age--;
+        }
+        return age;
     };
 });
